@@ -22,7 +22,7 @@ class UsuarioBloc extends Bloc<UsuarioEvent, UsuarioState> {
           usuario: state.usuario.copyWith(
               profesiones: [...state.usuario.profesiones, event.profesion]));
     } else if (event is BorrarUsuario) {
-      yield state.estadoInicial();
+      yield state.estadoInicial(); 
     }
   }
 }
