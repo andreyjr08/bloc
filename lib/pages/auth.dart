@@ -11,7 +11,7 @@ class Auth extends StatefulWidget {
 class _AuthState extends State<Auth> {
   final LocalAuthentication auth = LocalAuthentication();
   _SupportState _supportState = _SupportState.unknown;
-  bool _canCheckBiometrics;
+  //bool _canCheckBiometrics;
   List<BiometricType> _availableBiometrics;
   String _authorized = 'No Autorizado';
   bool _isAuthenticating = false;
@@ -26,7 +26,7 @@ class _AuthState extends State<Auth> {
         );
   }
 
-  Future<void> _checkBiometrics() async {
+  /*Future<void> _checkBiometrics() async {
     //late bool _canCheckBiometrics;
     try {
       _canCheckBiometrics = await auth.canCheckBiometrics;
@@ -39,9 +39,9 @@ class _AuthState extends State<Auth> {
     setState(() {
       _canCheckBiometrics = _canCheckBiometrics;
     });
-  }
+  }*/
 
-  Future<void> _getAvailableBiometrics() async {
+  /*Future<void> _getAvailableBiometrics() async {
     //late List<BiometricType> availableBiometrics;
     try {
       _availableBiometrics = await auth.getAvailableBiometrics();
@@ -55,9 +55,9 @@ class _AuthState extends State<Auth> {
     setState(() {
       _availableBiometrics = _availableBiometrics;
     });
-  }
+  }*/
 
-  Future<void> _authenticate() async {
+  /*Future<void> _authenticate() async {
     bool authenticated = false;
     try {
       setState(() {
@@ -84,7 +84,7 @@ class _AuthState extends State<Auth> {
 
     setState(
         () => _authorized = authenticated ? 'Authorized' : 'Not Authorized');
-  }
+  }*/
 
   Future<void> _authenticateWithBiometrics() async {
     bool authenticated = false;
@@ -174,16 +174,15 @@ class _AuthState extends State<Auth> {
                       ),
                       Column(
                         children: [
-                           Text('Can check biometrics: $_availableBiometrics\n'),
+                           Text('Prueba Impresion'),
                           ElevatedButton(
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(_isAuthenticating ? 'Cancelar' : 'Huella'),
-                                Icon(Icons.fingerprint),
+                                Icon(Icons.print),
                               ],
                             ),
-                            onPressed: _getAvailableBiometrics,
+                           onPressed: () => Navigator.pushNamed(context, 'bluetooth')
                           ),
                         ],
                       ),

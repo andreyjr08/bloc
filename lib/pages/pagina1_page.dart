@@ -13,7 +13,7 @@ class Pagina1Page extends StatelessWidget {
         actions: [
           IconButton(
             icon: Icon(Icons.delete),
-            onPressed: (){
+            onPressed: () {
               BlocProvider.of<UsuarioBloc>(context).add(BorrarUsuario());
             },
           )
