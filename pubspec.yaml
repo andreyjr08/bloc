@@ -33,7 +33,7 @@ dependencies:
   local_auth: ^1.1.4
   print_bluetooth_thermal: ^0.0.8
   provider: ^5.0.0
-  path_provider: ^1.6.24
+  path_provider: ^2.0.1
   http: 
   esc_pos_utils: ^0.4.9
 

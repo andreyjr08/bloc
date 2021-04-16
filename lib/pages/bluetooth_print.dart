@@ -131,6 +131,8 @@ class _BluetoothPrint extends State<BluetoothPrint> {
           width: PosTextSize.size2,
         ));
 
+ 
+
     // Print image:
     final ByteData data = await rootBundle.load('assets/logo.png');
     final Uint8List bytes = data.buffer.asUint8List();

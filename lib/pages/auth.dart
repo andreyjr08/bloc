@@ -179,6 +179,7 @@ class _AuthState extends State<Auth> {
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
                               children: [
+                                Text('print_bluetooth_thermal '),
                                 Icon(Icons.print),
                               ],
                             ),
