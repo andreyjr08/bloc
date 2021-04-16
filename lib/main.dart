@@ -8,7 +8,7 @@ import 'package:estados/pages/pagina2_page.dart';
 import 'package:estados/pages/pagina1_page.dart';
 
 import 'package:estados/pages/auth.dart';
-
+ 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

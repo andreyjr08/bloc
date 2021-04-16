@@ -1,4 +1,5 @@
 import 'package:meta/meta.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:bloc/bloc.dart';
 
 import 'package:estados/models/usuario.dart';
@@ -15,12 +16,14 @@ class UsuarioBloc extends Bloc<UsuarioEvent, UsuarioState> {
   Stream<UsuarioState> mapEventToState(UsuarioEvent event) async* {
     if (event is ActivarUsuario) {
       yield state.copyWith(usuario: event.usuario);
+
     } else if (event is CambiarEdad) {
-      yield state.copyWith(usuario: state.usuario.copyWith(edad: event.edad));
+      yield state.copyWith(usuario: state.usuario.copyWith(edad: event.edad, nombre: '', profesiones: []));
+      
     } else if (event is AgregarProfesion) {
       yield state.copyWith(
           usuario: state.usuario.copyWith(
-              profesiones: [...state.usuario.profesiones, event.profesion]));
+              profesiones: [...state.usuario.profesiones, event.profesion], edad: 18, nombre: ''));
     } else if (event is BorrarUsuario) {
       yield state.estadoInicial(); 
     }

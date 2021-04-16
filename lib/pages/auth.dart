@@ -12,7 +12,7 @@ class _AuthState extends State<Auth> {
   final LocalAuthentication auth = LocalAuthentication();
   _SupportState _supportState = _SupportState.unknown;
   //bool _canCheckBiometrics;
-  List<BiometricType> _availableBiometrics;
+  //List<BiometricType> _availableBiometrics;
   String _authorized = 'No Autorizado';
   bool _isAuthenticating = false;
 

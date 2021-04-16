@@ -8,6 +8,7 @@ class Pagina2Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: non_constant_identifier_names
+    // ignore: close_sinks
     final usuarioBloc = BlocProvider.of<UsuarioBloc>(context);
 
     return Scaffold(

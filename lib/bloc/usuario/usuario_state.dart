@@ -4,12 +4,13 @@ class UsuarioState {
   final bool existeUsuario;
   final Usuario usuario;
 
-  UsuarioState({Usuario user})
-      : usuario = user ?? null,
+  UsuarioState({user})
+      : usuario = user,
+        // ignore: unnecessary_null_comparison
         existeUsuario = (user != null) ? true : false;
 
-  UsuarioState copyWith({Usuario usuario}) =>
-      UsuarioState(user: usuario ?? this.usuario);
+  UsuarioState copyWith({ Usuario usuario}) =>
+      UsuarioState(user: usuario);
 
-  UsuarioState estadoInicial() => new UsuarioState();
+  UsuarioState estadoInicial() => new UsuarioState(user: usuario);
 }
